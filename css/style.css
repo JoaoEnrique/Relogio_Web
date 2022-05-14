@@ -1,0 +1,155 @@
+@font-face
+{
+   font-family: 'Digital';
+   src: url('../fonts/DS-DIGII.TTF');
+}
+body
+{
+    overflow: hidden!important;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+input, input:active, input:focus 
+{
+    border: 0;
+    outline: 0;
+    background: transparent;
+}
+
+.digital
+{
+    font-family: 'Digital';
+}
+
+.hora
+{
+    font-size: 110px;
+}
+.data
+{
+    font-size: 110px!important;
+    margin-top: -5px;
+    margin-bottom: -30px;
+}
+.dia, .semana, .temperatura, .alarme
+{
+    font-size: 30px!important;
+    margin-top: -5px;
+    margin-bottom: -30px;
+}
+
+figcaption
+{
+    position: absolute!important;
+}
+
+.container
+{
+    justify-content: center;
+    align-items: center;
+    min-width: 100vw;
+    display: flex;
+    min-height: 100vh;
+}
+
+figure
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.legenda
+{/*legenda*/
+    transition: all linear 1s;
+    color: #000;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin-left: 37px;
+    margin-top: 20px;
+}
+/*Animacao da legenda*/
+
+@media screen and (max-width: 482px)
+{
+    .data
+    {
+        font-size: 101px!important;
+        margin-top: -5px;
+        margin-bottom: -30px;
+    }
+
+    .dia, .semana, .temperatura, .alarme
+    {
+        font-size: 25px!important;
+    }
+}
+
+@media screen and (max-width: 447px)
+{
+    .data
+    {
+        font-size: 90px!important;
+        margin-top: -5px;
+        margin-bottom: -30px;
+    }
+
+    .dia, .semana, .temperatura, .alarme
+    {
+        font-size: 20px!important;
+    }
+}
+
+@media screen and (max-width: 375px)
+{
+    .data
+    {
+        font-size: 90px!important;
+        margin-top: -10px;
+        margin-bottom: -30px;
+    }
+
+    .dia, .semana, .temperatura, .alarme
+    {
+        font-size: 20px!important;
+    }
+
+    .legenda
+    {
+        padding: 0px;
+    }
+}
+
+@media screen and (max-width: 348px)
+{
+    .data
+    {
+        font-size: 80px!important;
+        margin-top: -5px;
+        margin-bottom: -30px;
+    }
+
+    .dia, .semana, .temperatura, .alarme
+    {
+        font-size: 15px!important;
+    }
+
+    .legenda
+    {
+        padding: 0px;
+    }
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio Digital - João Enrique</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <main>
+        <div class="container">
+            <audio id="audio">
+                <source src="js/alarme.mp3" type="audio/mp3">
+            </audio>
+            <div class="row">
+                <div class="col">
+                    <figure class="figure img-galeria">
+                        <img src="img/relogio1.png" class="figure-img img-fluid rounded"><!--Imagem do relogio-->
+                        <div class="legenda">
+                            <div class="row">
+                                <div class="col">
+                                    <p class="digital data"></p><!--data com horario -->
+                                </div>
+                            </div>
+                            <div class="row" style="margin-right: 50px;">
+                                <div class="col">
+                                    <p class="digital semana"></p><!--data com dia da semana -->
+                                    <audio id="audio" controls style="display: none;">
+                                        <source src="js/alarme.mp3" type="audio/mp3">
+                                    </audio>
+                                    
+                                </div>
+                                <div class="col">
+                                    <p class="digital dia" id="dia"></p><!--data com dia/mes/ano -->
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="col" style="margin-top: 20px;">
+                                        <p class="digital temperatura"><span>0</span>ºC</p><!--temperatura -->
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="col" style="margin-top: 20px;">
+                                        <p class="digital alarme"  onclick="playAudio()"><input id="hora" class="time" type="time"  onclick="playAudio()"></p><!--alarme -->
+                                </div>
+                            </div>
+                        </div>
+                    </figure>
+                </div>
+            </div>
+        </div> 
+
+    </main>
+
+    <script>
+        var x = document.getElementById("audio"); 
+        
+        function playAudio() { 
+            
+
+            var data = new Date();
+            var hora = data.getHours();
+            var min = data.getMinutes();
+            var sec = data.getSeconds();
+
+            var horaAtual = hora + ":" + min;
+            var horaAlarme = document.getElementById("hora").value;
+
+                if (horaAtual == horaAlarme && sec == 0) {
+                    x.play();
+                } 
+
+    }
+    setInterval(playAudio, 1000);//executar função a cada 1 segundo
+        </script>
+</body>
+</html>
+
